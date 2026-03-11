@@ -10,18 +10,27 @@ import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.graphics.Color
 
 private val DarkColorScheme = darkColorScheme(
     primary = BubblegumPink,
     secondary = PinkSecrets,
-    tertiary = StrawberryMilkshake
+    tertiary = InLove,
+    background = HumblePink,
+    surface = InLove,
+    onPrimary = Color.White
 )
 
 private val LightColorScheme = lightColorScheme(
     primary = BubblegumPink,
     secondary = PinkSecrets,
-    tertiary = StrawberryMilkshake
-)
+    tertiary = InLove,
+    background = AlmostPink,
+    surface = StrawberryMilkshake,
+    onPrimary = Color.White,
+    onBackground = HumblePink
+
+
     /* Other default colors to override
     background = Color(0xFFFFFBFE),
     surface = Color(0xFFFFFBFE),
@@ -31,7 +40,7 @@ private val LightColorScheme = lightColorScheme(
     onBackground = Color(0xFF1C1B1F),
     onSurface = Color(0xFF1C1B1F),
     */
-
+)
 
 @Composable
 fun Kelompok4Theme(
