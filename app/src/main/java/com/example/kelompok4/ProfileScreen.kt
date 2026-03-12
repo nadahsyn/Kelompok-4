@@ -22,9 +22,10 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Person
+import androidx.navigation.NavController
 
 @Composable
-fun ProfileScreen() {
+fun ProfileScreen(navController: NavController) {
 
     Column(
         modifier = Modifier
@@ -93,7 +94,9 @@ fun ProfileScreen() {
 
         //LOGOUT BUTTON
         Button(
-            onClick = { },
+            onClick = {
+                navController.navigate("login")
+            },
             colors = ButtonDefaults.buttonColors(containerColor = InLove),
             shape = RoundedCornerShape(20.dp),
             modifier = Modifier.fillMaxWidth()
