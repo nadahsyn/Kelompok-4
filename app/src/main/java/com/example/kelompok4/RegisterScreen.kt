@@ -8,12 +8,12 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.graphics.Color
 import com.example.kelompok4.ui.theme.*
 import androidx.compose.foundation.background
+import androidx.navigation.NavController
 
 @Composable
-fun RegisterScreen() {
+fun RegisterScreen(navController: NavController) {
 
     var firstName by remember { mutableStateOf("") }
     var lastName by remember { mutableStateOf("") }
@@ -99,7 +99,10 @@ fun RegisterScreen() {
 
         Button(
             onClick = {
+
                 println("Data Saved")
+
+                navController.navigate("login")
             },
             colors = ButtonDefaults.buttonColors(
                 containerColor = BubblegumPink
