@@ -22,9 +22,10 @@ import androidx.compose.ui.unit.sp
 import com.example.kelompok4.ui.theme.*
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.ui.input.pointer.pointerInput
+import androidx.navigation.NavController
 
 @Composable
-fun LoginScreen() {
+fun LoginScreen(navController: NavController) {
 
     val context = LocalContext.current
     val keyboardController = LocalSoftwareKeyboardController.current
@@ -139,6 +140,8 @@ fun LoginScreen() {
                         "Login berhasil",
                         Toast.LENGTH_SHORT
                     ).show()
+
+                    navController.navigate("profile")
                 }
             },
             modifier = Modifier
@@ -157,5 +160,18 @@ fun LoginScreen() {
                 Toast.makeText(context, "Fitur belum tersedia", Toast.LENGTH_SHORT).show()
             }
         )
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        TextButton(
+            onClick = {
+                navController.navigate("register")
+            }
+        ) {
+            Text(
+                text = "Belum punya akun? Register",
+                color = HumblePink
+            )
+        }
     }
 }
