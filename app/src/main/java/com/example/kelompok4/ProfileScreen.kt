@@ -24,7 +24,7 @@ import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Person
 import androidx.navigation.NavController
-
+import androidx.compose.ui.res.painterResource
 @Composable
 fun ProfileScreen(navController: NavController) {
 

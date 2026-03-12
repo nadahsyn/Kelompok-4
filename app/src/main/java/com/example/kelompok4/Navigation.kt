@@ -16,6 +16,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.compose.*
 import androidx.navigation.NavHostController
 import com.example.kelompok4.LoginScreen
+import com.example.kelompok4.RegisterScreen
 import com.example.kelompok4.ui.screens.ProfileScreen
 
 @Composable
@@ -68,9 +69,4 @@ fun AvatarScreen(navController: NavHostController) {
             Text("Back")
         }
     }
-}
-
-@Composable
-fun RegisterScreen(x0: NavHostController) {
-    TODO("Not yet implemented")
 }
