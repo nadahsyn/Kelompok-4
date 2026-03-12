@@ -23,6 +23,11 @@ import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Person
 import androidx.navigation.NavController
+import androidx.compose.foundation.clickable
+import androidx.compose.ui.res.painterResource
+import androidx.compose.foundation.Image
+import androidx.compose.ui.draw.scale
+import com.example.kelompok4.R
 
 @Composable
 fun ProfileScreen(navController: NavController) {
@@ -38,17 +43,84 @@ fun ProfileScreen(navController: NavController) {
 
         Spacer(modifier = Modifier.height(40.dp))
 
-        //PROFILE IMAGE
         Box(
             modifier = Modifier
                 .size(120.dp)
                 .clip(CircleShape)
                 .background(BubblegumPink)
-        )
+                .clickable {
+                    navController.navigate("avatar")
+                },
+            contentAlignment = Alignment.Center
+        ) {
+
+            Box(
+                modifier = Modifier
+                    .size(120.dp)
+                    .clip(CircleShape)
+            ) {
+
+                Image(
+                    painter = painterResource(R.drawable.ava),
+                    contentDescription = null,
+                    modifier = Modifier.fillMaxSize(),
+                    contentScale = ContentScale.Crop
+                )
+
+                Image(
+                    painter = painterResource(R.drawable.eyes),
+                    contentDescription = null,
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .offset(y = 10.dp)
+                        .scale(1.1f),
+                    contentScale = ContentScale.Crop
+                )
+
+                Image(
+                    painter = painterResource(R.drawable.brow),
+                    contentDescription = null,
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .offset(y = 8.dp)
+                        .scale(1.1f),
+                    contentScale = ContentScale.Crop
+                )
+
+                Image(
+                    painter = painterResource(R.drawable.nose),
+                    contentDescription = null,
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .offset(y = 12.dp)
+                        .scale(1.1f),
+                    contentScale = ContentScale.Crop
+                )
+
+                Image(
+                    painter = painterResource(R.drawable.mouth),
+                    contentDescription = null,
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .offset(y = 16.dp)
+                        .scale(1.1f),
+                    contentScale = ContentScale.Crop
+                )
+
+                Image(
+                    painter = painterResource(R.drawable.hair),
+                    contentDescription = null,
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .offset(y = 8.dp)
+                        .scale(1.1f),
+                    contentScale = ContentScale.Crop
+                )
+            }
+        }
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        //USERNAME
         Text(
             text = "Intan Vilodia Putri",
             fontSize = 22.sp,
@@ -56,7 +128,6 @@ fun ProfileScreen(navController: NavController) {
             color = HumblePink
         )
 
-        //EMAIL
         Text(
             text = "intanvilo@gmail.com",
             fontSize = 16.sp,
@@ -65,7 +136,6 @@ fun ProfileScreen(navController: NavController) {
 
         Spacer(modifier = Modifier.height(40.dp))
 
-        //USER INFO CARD
         Card(
             modifier = Modifier.fillMaxWidth(),
             shape = RoundedCornerShape(16.dp),
@@ -92,7 +162,6 @@ fun ProfileScreen(navController: NavController) {
 
         Spacer(modifier = Modifier.height(40.dp))
 
-        //LOGOUT BUTTON
         Button(
             onClick = {
                 navController.navigate("login")
