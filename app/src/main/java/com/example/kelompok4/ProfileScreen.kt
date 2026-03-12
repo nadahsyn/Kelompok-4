@@ -15,6 +15,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.kelompok4.ui.theme.*
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.draw.clip
@@ -44,6 +45,9 @@ fun ProfileScreen(navController: NavController) {
                 .size(120.dp)
                 .clip(CircleShape)
                 .background(BubblegumPink)
+                .clickable {
+                    navController.navigate("avatar")
+                }
         )
 
         Spacer(modifier = Modifier.height(16.dp))

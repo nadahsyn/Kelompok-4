@@ -14,10 +14,11 @@ class MainActivity : ComponentActivity() {
 
         setContent {
             Kelompok4Theme {
-                RegisterScreen()
+
+                val navController = rememberNavController()
+                AppNavigation(navController)
+
             }
-            val navController = rememberNavController()
-            AppNavigation(navController)
         }
     }
 }
